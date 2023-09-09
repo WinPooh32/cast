@@ -49,8 +49,8 @@ func show(ss []string) {
 
 func main() {
 	mm := []MyString{"hello", "world", "list", "of", "strings"}
-	
-    ss := cast.Strings(mm)
+
+	ss := cast.Strings(mm)
 
 	show(ss)
 }
