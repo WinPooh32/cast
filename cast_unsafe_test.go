@@ -75,8 +75,8 @@ func castStringsInsert[T ~string](tt []T) []string {
 	if len(tt) != len(vv) {
 		panic("must be equal")
 	}
-	for _, value := range tt {
-		vv = append(vv, string(value))
+	for i, value := range tt {
+		vv[i] = string(value)
 	}
 	return vv
 }
