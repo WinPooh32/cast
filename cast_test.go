@@ -63,6 +63,16 @@ func TestCast(t *testing.T) {
 			want: ([]string)(nil),
 		},
 		{
+			name: "empty strings array",
+			args: args{u: make([]AString, 0)},
+			want: []string{},
+		},
+		{
+			name: "empty strings array with cap",
+			args: args{u: make([]AString, 0, 10)},
+			want: []string{},
+		},
+		{
 			name: "string",
 			args: args{u: []AString{"hello", "world", "list", "of", "strings"}},
 			want: []string{"hello", "world", "list", "of", "strings"},

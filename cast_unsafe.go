@@ -32,5 +32,8 @@ func cast[T any, U any](uu []U) []T {
 	if uu == nil {
 		return nil
 	}
-	return unsafe.Slice((*T)(unsafe.Pointer(&uu[:][0])), cap(uu))[:len(uu)]
+	if cap(uu) == 0 {
+		return []T{}
+	}
+	return unsafe.Slice((*T)(unsafe.Pointer(&uu[:cap(uu)][0])), cap(uu))[:len(uu)]
 }
